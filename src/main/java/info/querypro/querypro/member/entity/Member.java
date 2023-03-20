@@ -11,6 +11,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import info.querypro.querypro.base.BaseCreateTime;
 import info.querypro.querypro.job.entity.Job;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -23,6 +24,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "member")
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 public class Member extends BaseCreateTime {
     @Id

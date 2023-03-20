@@ -11,6 +11,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import info.querypro.querypro.job.entity.Job;
 import info.querypro.querypro.member.entity.Member;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -23,6 +24,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "question")
 @Getter
+@AllArgsConstructor
 @NoArgsConstructor
 public class Question {
     @Id

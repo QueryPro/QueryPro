@@ -16,7 +16,6 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 /**
  * 좋아요 엔티티.
@@ -28,6 +27,7 @@ import lombok.Setter;
 @Table(name = "heart")
 @Getter
 @NoArgsConstructor
+@AllArgsConstructor
 public class Heart {
     @EmbeddedId
     private Pk pk;
@@ -46,7 +46,6 @@ public class Heart {
     @AllArgsConstructor
     @EqualsAndHashCode
     @Getter
-    @Setter
     @Embeddable
     public static class Pk implements Serializable {
         @Column(name = "question_no")
