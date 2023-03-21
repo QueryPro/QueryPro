@@ -1,13 +1,20 @@
 package info.querypro.querypro.chatgpt.service.impl;
 
-import static info.querypro.querypro.chatgpt.util.ChatGptConstant.*;
+import static info.querypro.querypro.chatgpt.util.ChatGptConstant.AUTHORIZATION;
+import static info.querypro.querypro.chatgpt.util.ChatGptConstant.BEARER;
+import static info.querypro.querypro.chatgpt.util.ChatGptConstant.MAX_TOKEN;
+import static info.querypro.querypro.chatgpt.util.ChatGptConstant.MODEL;
+import static info.querypro.querypro.chatgpt.util.ChatGptConstant.TEMPERATURE;
+import static info.querypro.querypro.chatgpt.util.ChatGptConstant.TOP_P;
+import static info.querypro.querypro.chatgpt.util.ChatGptConstant.URL;
 
 import java.util.List;
 import info.querypro.querypro.chatgpt.dto.request.ChatGptRequestDto;
 import info.querypro.querypro.chatgpt.dto.request.QuestionRequestDto;
 import info.querypro.querypro.chatgpt.dto.response.ChatGptResponseDto;
 import info.querypro.querypro.chatgpt.service.ChatGptService;
-import org.springframework.boot.context.properties.ConfigurationProperties;
+import info.querypro.querypro.config.OpenAiConfig;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -25,15 +32,15 @@ import org.springframework.web.client.RestTemplate;
  **/
 @Service
 @Transactional(readOnly = true)
-@ConfigurationProperties(prefix = "openai")
+@RequiredArgsConstructor
 public class ChatGptServiceImpl implements ChatGptService {
-    private String key;
+    private final OpenAiConfig aiConfig;
     @Override
     public ChatGptResponseDto questionChatGpt(QuestionRequestDto questionRequestDto) {
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
-        headers.add(AUTHORIZATION, BEARER + key);
+        headers.add(AUTHORIZATION, BEARER + aiConfig.getKey());
 
         ChatGptRequestDto chatGptRequestDto = new ChatGptRequestDto(
             MODEL,
@@ -58,11 +65,4 @@ public class ChatGptServiceImpl implements ChatGptService {
         return exchange.getBody();
     }
 
-    public String getKey() {
-        return key;
-    }
-
-    public void setKey(String key) {
-        this.key = key;
-    }
 }

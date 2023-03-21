@@ -8,12 +8,15 @@ package info.querypro.querypro.chatgpt.util;
  **/
 public class ChatGptConstant {
 
+    private ChatGptConstant() {
+    }
+
     public static final String AUTHORIZATION = "Authorization";
     public static final String BEARER = "Bearer ";
     public static final String MODEL = "gpt-3.5-turbo-0301";
     public static final String URL = "https://api.openai.com/v1/chat/completions";
     public static final Double TEMPERATURE = 0.2;
     public static final Double TOP_P = 0.1;
-    public static final Integer MAX_TOKEN = 2048;
+    public static final Integer MAX_TOKEN = 4000;
 
 }
