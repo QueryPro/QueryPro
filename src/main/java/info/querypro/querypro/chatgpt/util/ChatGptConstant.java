@@ -15,8 +15,9 @@ public class ChatGptConstant {
     public static final String BEARER = "Bearer ";
     public static final String MODEL = "gpt-3.5-turbo-0301";
     public static final String URL = "https://api.openai.com/v1/chat/completions";
+    public static final String SESSION_CREATE_URL = "https://api.openai.com/v1/conversations";
     public static final Double TEMPERATURE = 0.2;
     public static final Double TOP_P = 0.1;
-    public static final Integer MAX_TOKEN = 4000;
+    public static final Integer MAX_TOKEN = 100;
 
 }

@@ -5,6 +5,7 @@ import info.querypro.querypro.chatgpt.dto.request.ChatGptRequestDto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 /**
  * Some description here.
@@ -15,6 +16,7 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class Choice {
 
     private ChatGptRequestDto.Messages message;

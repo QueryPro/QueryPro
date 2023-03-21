@@ -5,6 +5,7 @@ import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 /**
  * Some description here.
@@ -27,6 +28,7 @@ public class ChatGptRequestDto {
     @AllArgsConstructor
     @NoArgsConstructor
     @Getter
+    @ToString
     public static class Messages {
         private String role;
         private String content;
