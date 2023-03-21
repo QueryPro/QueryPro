@@ -3,6 +3,7 @@ package info.querypro.querypro.chatgpt.dto.response;
 import java.time.LocalDate;
 import java.util.List;
 import lombok.Getter;
+import lombok.ToString;
 
 /**
  * Some description here.
@@ -11,6 +12,7 @@ import lombok.Getter;
  * @since : 1.0
  **/
 @Getter
+@ToString
 public class ChatGptResponseDto {
 
     private String id;

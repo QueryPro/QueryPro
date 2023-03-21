@@ -1,9 +1,11 @@
 package info.querypro.querypro.chatgpt.dto.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 /**
  * Some description here.
@@ -16,10 +18,20 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class ChatGptRequestDto {
     private String model;
-    private String prompt;
     @JsonProperty("max_tokens")
     private Integer maxTokens;
     private Double temperature;
+    private List<Messages> messages;
     @JsonProperty("top_p")
     private Double topP;
+
+    @AllArgsConstructor
+    @NoArgsConstructor
+    @Getter
+    @ToString
+    public static class Messages {
+        private String role;
+        private String content;
+    }
+
 }
