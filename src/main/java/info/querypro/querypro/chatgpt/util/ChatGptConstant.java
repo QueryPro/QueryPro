@@ -18,6 +18,6 @@ public class ChatGptConstant {
     public static final String SESSION_CREATE_URL = "https://api.openai.com/v1/conversations";
     public static final Double TEMPERATURE = 0.2;
     public static final Double TOP_P = 0.1;
-    public static final Integer MAX_TOKEN = 100;
+    public static final Integer MAX_TOKEN = 300;
 
 }
