@@ -22,7 +22,8 @@ public class ChatGptTestController {
 
     @GetMapping("/test")
     public ChatGptResponseDto getAnswer() {
-        return chatGptService.questionChatGpt(new QuestionRequestDto("안녕??"));
+        return chatGptService.questionChatGpt(new QuestionRequestDto("너는 이제부터 재무관리사를 채용하는 면접관이야.\n" +
+                "면접에 맞는 질문을 30가지를 답변과 함께 Markdown toggle 형식으로 줘"));
     }
 
 }

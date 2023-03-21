@@ -2,6 +2,7 @@ package info.querypro.querypro.chatgpt.service.impl;
 
 import static info.querypro.querypro.chatgpt.util.ChatGptConstant.*;
 
+import java.util.List;
 import info.querypro.querypro.chatgpt.dto.request.ChatGptRequestDto;
 import info.querypro.querypro.chatgpt.dto.request.QuestionRequestDto;
 import info.querypro.querypro.chatgpt.dto.response.ChatGptResponseDto;
@@ -34,9 +35,9 @@ public class ChatGptServiceImpl implements ChatGptService {
 
         ChatGptRequestDto chatGptRequestDto = new ChatGptRequestDto(
             MODEL,
-            questionRequestDto.getQuestion(),
             MAX_TOKEN,
             TEMPERATURE,
+            List.of(new ChatGptRequestDto.Messages("user", questionRequestDto.getQuestion())),
             TOP_P
         );
 

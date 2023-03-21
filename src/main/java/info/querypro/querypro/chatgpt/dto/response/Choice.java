@@ -1,6 +1,7 @@
 package info.querypro.querypro.chatgpt.dto.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import info.querypro.querypro.chatgpt.dto.request.ChatGptRequestDto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,7 +17,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Choice {
 
-    private String text;
+    private ChatGptRequestDto.Messages message;
     private Integer index;
     @JsonProperty("finish_reason")
     private String finishReason;
