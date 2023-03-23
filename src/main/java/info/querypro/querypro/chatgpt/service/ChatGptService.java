@@ -2,7 +2,6 @@ package info.querypro.querypro.chatgpt.service;
 
 import info.querypro.querypro.chatgpt.dto.request.QuestionRequestDto;
 import info.querypro.querypro.chatgpt.dto.response.ChatGptResponseDto;
-import org.springframework.boot.configurationprocessor.json.JSONException;
 
 /**
  * Some description here.
@@ -12,6 +11,6 @@ import org.springframework.boot.configurationprocessor.json.JSONException;
  **/
 public interface ChatGptService {
 
-    StringBuilder questionChatGpt(QuestionRequestDto questionRequestDto) throws JSONException;
-    
+    StringBuilder questionChatGpt(QuestionRequestDto questionRequestDto);
+
 }
