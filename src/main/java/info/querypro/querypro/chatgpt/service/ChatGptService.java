@@ -13,5 +13,5 @@ import org.springframework.boot.configurationprocessor.json.JSONException;
 public interface ChatGptService {
 
     StringBuilder questionChatGpt(QuestionRequestDto questionRequestDto) throws JSONException;
-    
+
 }
