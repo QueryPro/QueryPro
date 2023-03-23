@@ -18,7 +18,6 @@ import info.querypro.querypro.chatgpt.service.ChatGptService;
 import info.querypro.querypro.config.OpenAiConfig;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.boot.configurationprocessor.json.JSONException;
 import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -46,8 +45,7 @@ public class ChatGptServiceImpl implements ChatGptService {
     private final Integer QUESTION_COUNT = 50;
 
     @Override
-    public StringBuilder questionChatGpt(QuestionRequestDto questionRequestDto)
-        throws JSONException {
+    public StringBuilder questionChatGpt(QuestionRequestDto questionRequestDto) {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         headers.add(AUTHORIZATION, BEARER + aiConfig.getKey());
